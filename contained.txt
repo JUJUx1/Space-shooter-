@@ -1,0 +1,27 @@
+`player.png` - Your player ship
+     - `enemy1.png` - Basic enemy
+     - `enemy2.png` - Zig-zag enemy
+     - `enemy3.png` - Homing enemy
+     - `boss.png` - Boss enemy
+     - `bullet.png` - Standard bullet
+     - `special.png` - Special weapon
+     - `powerup_health.png` - Health power-up
+     - `powerup_weapon.png` - Weapon power-up
+     - `powerup_special.png` - Special weapon charge
+     - `stars.png` - Starfield background
+     
+// Replace the enemy movement code with:
+for (let i = enemies.length - 1; i >= 0; i--) {
+const enemy = enemies[i];
+if (!enemy) continue;
+
+// Use the enemy's update function if it exists
+if (enemy.update) {
+enemy.update(deltaTime);
+} else {
+// Default movement
+enemy.y += enemy.speed;
+}
+
+// Rest of collision detection remains the same...
+}
